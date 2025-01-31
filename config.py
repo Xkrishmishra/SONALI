@@ -13,9 +13,9 @@ API_HASH = getenv("API_HASH")
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
 # -------------------------------------------------------
-OWNER_USERNAME = getenv("OWNER_USERNAME","lx44kk")
+OWNER_USERNAME = getenv("OWNER_USERNAME")
 # --------------------------------------------------------
-BOT_USERNAME = getenv("BOT_USERNAME","syn_ixbot")
+BOT_USERNAME = getenv("BOT_USERNAME")
 # --------------------------------------------------------
 BOT_NAME = getenv("BOT_NAME")
 # ---------------------------------------------------------
@@ -44,15 +44,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/xkrishmishra/sonali",
+    "https://github.com/yakhsyaa/sonali",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/krishSUPPORT")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/krishnetwork")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/doongoo")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+MGj4fMAbQ8M0ZThl")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -90,21 +90,21 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://files.catbox.moe/fndjks.jpg"
+    "START_IMG_URL", "https://i.imghippo.com/files/GohQ1294Lc.jp"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://files.catbox.moe/tlgikk.mp4"
+    "PING_IMG_URL", "https://i.imghippo.com/files/GohQ1294Lc.jp"
 )
-PLAYLIST_IMG_URL = "https://files.catbox.moe/tlgikk.mp4"
-STATS_IMG_URL = "https://files.catbox.moe/tlgikk.mp4"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/enaf5l.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/enaf5l.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/enaf5l.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/enaf5l.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/enaf5l.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/enaf5l.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/enaf5l.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/enaf5l.jpg"
+PLAYLIST_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+STATS_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+TELEGRAM_AUDIO_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+TELEGRAM_VIDEO_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+STREAM_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+SOUNCLOUD_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+YOUTUBE_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+SPOTIFY_ARTIST_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+SPOTIFY_ALBUM_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
+SPOTIFY_PLAYLIST_IMG_URL = "https://i.imghippo.com/files/GohQ1294Lc.jp"
 
 
 def time_to_seconds(time):
