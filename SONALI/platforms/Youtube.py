@@ -5,9 +5,9 @@ from typing import Union
 import yt_dlp
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
-from Sonali.utils.formatters import time_to_seconds
+from SONALI.utils.formatters import time_to_seconds
 import aiohttp
-from Sonali import LOGGER
+from SONALI import LOGGER
 
 try:
     from py_yt import VideosSearch
@@ -179,3 +179,4 @@ async def download_video(link: str) -> str:
                 pass
 
         return None
+
