@@ -5,9 +5,9 @@ from typing import Union
 import yt_dlp
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
-from ShrutiMusic.utils.formatters import time_to_seconds
+from Sonali.utils.formatters import time_to_seconds
 import aiohttp
-from ShrutiMusic import LOGGER
+from Sonali import LOGGER
 
 try:
     from py_yt import VideosSearch
@@ -94,4 +94,5 @@ async def download_video(link: str) -> str:
     DOWNLOAD_DIR = "downloads"
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     file_path = os.path.join(DOWNLOAD_DIR, f"{video_id}.mp4")
+
 
