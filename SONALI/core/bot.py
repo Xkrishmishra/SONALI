@@ -2,13 +2,12 @@ from pyrogram import Client, errors
 from pyrogram.enums import ChatMemberStatus
 
 import config
-
-from ..logging import LOGGER
+from SONALI.core.logging import LOGGER  # Fixed absolute import
 
 
 class RAUSHAN(Client):
     def __init__(self):
-        LOGGER(__name__).info(f"Starting Bot...")
+        LOGGER(__name__).info("Starting Bot...")
         super().__init__(
             name="SONALI",
             api_id=config.API_ID,
@@ -28,25 +27,34 @@ class RAUSHAN(Client):
         try:
             await self.send_message(
                 chat_id=config.LOGGER_ID,
-                text=f"<u><b>» {self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b><u>\n\nɪᴅ : <code>{self.id}</code>\nɴᴀᴍᴇ : {self.name}\nᴜsᴇʀɴᴀᴍᴇ : @{self.username}",
+                text=(
+                    f"<u><b>» {self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b></u>\n\n"
+                    f"ɪᴅ : <code>{self.id}</code>\n"
+                    f"ɴᴀᴍᴇ : {self.name}\n"
+                    f"ᴜsᴇʀɴᴀᴍᴇ : @{self.username}"
+                ),
+                parse_mode="html"
             )
         except (errors.ChannelInvalid, errors.PeerIdInvalid):
             LOGGER(__name__).error(
-                "Bot has failed to access the log group/channel. Make sure that you have added your bot to your log group/channel."
+                "Bot cannot access the log group/channel. Add the bot there first."
             )
-
         except Exception as ex:
             LOGGER(__name__).error(
-                f"Bot has failed to access the log group/channel.\n  Reason : {type(ex).__name__}."
+                f"Bot failed to send log message. Reason: {type(ex).__name__}."
             )
 
-        a = await self.get_chat_member(config.LOGGER_ID, self.id)
-        if a.status != ChatMemberStatus.ADMINISTRATOR:
-            LOGGER(__name__).error(
-                "Please promote your bot as an admin in your log group/channel."
-            )
+        # Check bot admin status in log group
+        try:
+            member = await self.get_chat_member(config.LOGGER_ID, self.id)
+            if member.status != ChatMemberStatus.ADMINISTRATOR:
+                LOGGER(__name__).error(
+                    "Promote your bot as admin in the log group/channel."
+                )
+        except Exception:
+            LOGGER(__name__).warning("Cannot verify bot admin status in log group.")
 
-        LOGGER(__name__).info(f"Music Bot Started as {self.name}")
+        LOGGER(__name__).info(f"Music Bot started as {self.name}")
 
     async def stop(self):
         await super().stop()
